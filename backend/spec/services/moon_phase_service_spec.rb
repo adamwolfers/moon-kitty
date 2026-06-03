@@ -43,6 +43,11 @@ RSpec.describe MoonPhaseService do
       expect(result[:phase_emoji]).not_to be_empty
     end
 
+    it "returns a cat-themed description" do
+      expect(result[:cat_description]).to be_a(String)
+      expect(result[:cat_description]).not_to be_empty
+    end
+
     it "calls the USNO API" do
       result
       expect(WebMock).to have_requested(:get, /aa\.usno\.navy\.mil/)

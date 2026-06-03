@@ -5,7 +5,8 @@ RSpec.describe "GET /api/v1/moon_phase", type: :request do
     {
       phase_name: "Waning Gibbous",
       illumination: 96,
-      phase_emoji: "\u{1F316}"
+      phase_emoji: "\u{1F316}",
+      cat_description: "The moon is winding down, like a cat after a long play session"
     }
   end
 
@@ -25,5 +26,6 @@ RSpec.describe "GET /api/v1/moon_phase", type: :request do
     expect(json["phase_name"]).to eq("Waning Gibbous")
     expect(json["illumination"]).to eq(96)
     expect(json["phase_emoji"]).to eq("\u{1F316}")
+    expect(json["cat_description"]).to eq("The moon is winding down, like a cat after a long play session")
   end
 end
