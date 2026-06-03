@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import { ErrorBoundary } from '../components/ErrorBoundary'
 
 vi.mock('../hooks/useMoonPhase', () => ({
@@ -15,7 +16,9 @@ describe('App', () => {
     const { default: App } = await import('../App')
     render(
       <ErrorBoundary>
-        <App />
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
       </ErrorBoundary>
     )
     expect(screen.getByText(/something went wrong/i)).toBeInTheDocument()
