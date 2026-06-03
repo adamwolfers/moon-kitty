@@ -1,7 +1,7 @@
 FROM ruby:3.3-slim
 
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential curl && \
+    apt-get install --no-install-recommends -y build-essential curl libyaml-dev && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
