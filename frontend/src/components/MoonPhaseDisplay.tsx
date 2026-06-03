@@ -1,4 +1,5 @@
 import { MoonIcon } from './MoonIcon'
+import { LoadingSkeleton } from './LoadingSkeleton'
 import type { MoonPhaseData } from '../types/moon'
 
 interface MoonPhaseDisplayProps {
@@ -16,11 +17,7 @@ export function MoonPhaseDisplay({ data, error }: MoonPhaseDisplayProps) {
   }
 
   if (!data) {
-    return (
-      <div role="status" aria-busy="true" className="text-center text-whisker animate-pulse">
-        <p>Loading moon phase...</p>
-      </div>
-    )
+    return <LoadingSkeleton />
   }
 
   return (

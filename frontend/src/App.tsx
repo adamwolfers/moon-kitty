@@ -3,7 +3,7 @@ import { MoonPhaseDisplay } from './components/MoonPhaseDisplay'
 import { useMoonPhase } from './hooks/useMoonPhase'
 
 function App() {
-  const { data, loading, error } = useMoonPhase()
+  const { data, error } = useMoonPhase()
 
   return (
     <Layout>

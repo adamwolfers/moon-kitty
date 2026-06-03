@@ -31,11 +31,12 @@ describe('MoonPhaseDisplay', () => {
     expect(screen.getByLabelText('Waning Gibbous')).toBeInTheDocument()
   })
 
-  it('renders accessible loading state when data is null', () => {
+  it('renders loading skeleton when data is null', () => {
     render(<MoonPhaseDisplay data={null} />)
     const status = screen.getByRole('status')
     expect(status).toHaveAttribute('aria-busy', 'true')
-    expect(screen.getByText(/loading/i)).toBeInTheDocument()
+    // LoadingSkeleton uses sr-only text
+    expect(screen.getByText('Loading moon phase...')).toBeInTheDocument()
   })
 
   it('renders accessible error state', () => {
