@@ -6,7 +6,7 @@ A whimsical web app that displays the current moon phase with cat-themed phrasin
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React 19, TypeScript, Vite, Tailwind CSS |
+| Frontend | React 19, TypeScript, Vite, Tailwind CSS, React Router |
 | Backend | Ruby on Rails 8.1 (API-only) |
 | Testing | RSpec (backend), Vitest + Testing Library (frontend) |
 | Dev Environment | Docker Compose |
@@ -49,6 +49,7 @@ docker compose up
 ```
 
 - **Frontend**: http://localhost:5173
+- **Phase Gallery**: http://localhost:5173/gallery
 - **Backend API**: http://localhost:3000/api/v1/moon_phase
 
 ### Running Tests
@@ -76,23 +77,31 @@ Returns the current moon phase with cat-themed commentary.
 }
 ```
 
+## Routes
+
+| Path | Description |
+|------|-------------|
+| `/` | Live moon phase display with cat-themed commentary |
+| `/gallery` | All 8 moon phases, loading skeleton, and error state for visual QA |
+
 ## Project Structure
 
 ```
 moon-kitty/
-├── backend/                   # Rails API
+├── backend/                     # Rails API
 │   ├── app/
-│   │   ├── controllers/api/v1/  # API endpoints
-│   │   └── services/            # MoonPhaseService
-│   └── spec/                    # RSpec tests
-├── frontend/                  # React app
+│   │   ├── controllers/api/v1/    # API endpoints
+│   │   └── services/              # MoonPhaseService
+│   └── spec/                      # RSpec tests
+├── frontend/                    # React app
 │   ├── src/
-│   │   ├── api/                 # API client
-│   │   ├── components/          # UI components
-│   │   ├── hooks/               # Custom hooks
-│   │   └── types/               # TypeScript interfaces
-│   └── src/__tests__/           # Integration tests
-└── docker-compose.yml         # Dev environment
+│   │   ├── __tests__/             # App and routing tests
+│   │   ├── api/                   # API client
+│   │   ├── components/            # UI components + tests
+│   │   ├── hooks/                 # Custom hooks + tests
+│   │   └── types/                 # TypeScript interfaces
+│   └── Dockerfile
+└── docker-compose.yml           # Dev environment
 ```
 
 ## Environment Variables
