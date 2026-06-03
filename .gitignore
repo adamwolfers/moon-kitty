@@ -1,6 +1,37 @@
-
 # Beads / Dolt files (added by bd init)
 .dolt/
 *.db
 .beads-credential-key
 .beads/proxieddb/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.development
+.env.production
+.env.local
+.env.*.local
+
+# Build output
+frontend/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
+
+# Ruby
+backend/tmp/
+backend/log/*.log
+backend/storage/
+
+# Vite
+frontend/.vite/
