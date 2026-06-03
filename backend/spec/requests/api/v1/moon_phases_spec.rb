@@ -14,12 +14,12 @@ RSpec.describe "GET /api/v1/moon_phase", type: :request do
   end
 
   it "returns a successful response" do
-    get "/api/v1/moon_phase", headers: { "HOST" => "localhost" }
+    get "/api/v1/moon_phase"
     expect(response).to have_http_status(:ok)
   end
 
   it "returns JSON with moon phase data" do
-    get "/api/v1/moon_phase", headers: { "HOST" => "localhost" }
+    get "/api/v1/moon_phase"
     json = JSON.parse(response.body)
 
     expect(json["phase_name"]).to eq("Waning Gibbous")
