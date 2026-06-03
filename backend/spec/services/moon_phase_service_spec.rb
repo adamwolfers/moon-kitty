@@ -49,6 +49,7 @@ RSpec.describe MoonPhaseService do
     end
 
     it "caches the response" do
+      allow(Rails).to receive(:cache).and_return(ActiveSupport::Cache::MemoryStore.new)
       2.times { service.current_phase }
       expect(WebMock).to have_requested(:get, /aa\.usno\.navy\.mil/).once
     end

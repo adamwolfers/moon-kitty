@@ -8,7 +8,6 @@ services:
       - backend_gems:/usr/local/bundle
     environment:
       - ALLOWED_ORIGINS=http://localhost:5173
-      - RAILS_ENV=development
 
   frontend:
     build: ./frontend
