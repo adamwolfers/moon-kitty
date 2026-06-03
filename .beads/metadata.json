@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "moon_kitty",
+  "project_id": "71a37c16-aab4-4f65-b81e-5f30d6236fc8"
+}
