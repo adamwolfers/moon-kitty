@@ -1,9 +1,13 @@
 import { Layout } from './components/Layout'
+import { MoonPhaseDisplay } from './components/MoonPhaseDisplay'
+import { useMoonPhase } from './hooks/useMoonPhase'
 
 function App() {
+  const { data, loading, error } = useMoonPhase()
+
   return (
     <Layout>
-      <p className="text-starlight text-center">Coming soon...</p>
+      <MoonPhaseDisplay data={data} error={error} />
     </Layout>
   )
 }
