@@ -15,7 +15,7 @@ export function Layout({ children }: LayoutProps) {
           Moon Kitty
         </h1>
         <p className="text-starlight mt-2 text-lg">
-          Your celestial feline companion
+          Your lunar feline companion
         </p>
         <nav className="mt-4 flex gap-4 justify-center text-sm">
           {location.pathname !== '/' && (
