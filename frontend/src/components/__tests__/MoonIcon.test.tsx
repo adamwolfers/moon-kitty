@@ -8,14 +8,9 @@ describe('MoonIcon', () => {
     expect(screen.getByText('🌖')).toBeInTheDocument()
   })
 
-  it('has an accessible label with the phase name', () => {
+  it('uses role="img" with accessible label', () => {
     render(<MoonIcon phaseEmoji="🌕" phaseName="Full Moon" />)
-    expect(screen.getByLabelText('Full Moon')).toBeInTheDocument()
-  })
-
-  it('renders at a large size', () => {
-    render(<MoonIcon phaseEmoji="🌑" phaseName="New Moon" />)
-    const icon = screen.getByLabelText('New Moon')
+    const icon = screen.getByRole('img', { name: 'Full Moon' })
     expect(icon).toBeInTheDocument()
   })
 })

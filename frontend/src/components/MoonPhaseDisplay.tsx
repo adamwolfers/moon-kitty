@@ -9,7 +9,7 @@ interface MoonPhaseDisplayProps {
 export function MoonPhaseDisplay({ data, error }: MoonPhaseDisplayProps) {
   if (error) {
     return (
-      <div className="text-center text-red-300">
+      <div role="alert" className="text-center text-purr-ple">
         <p>{error}</p>
       </div>
     )
@@ -17,7 +17,7 @@ export function MoonPhaseDisplay({ data, error }: MoonPhaseDisplayProps) {
 
   if (!data) {
     return (
-      <div className="text-center text-whisker animate-pulse">
+      <div role="status" aria-busy="true" className="text-center text-whisker animate-pulse">
         <p>Loading moon phase...</p>
       </div>
     )

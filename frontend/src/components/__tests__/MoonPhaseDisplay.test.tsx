@@ -31,13 +31,16 @@ describe('MoonPhaseDisplay', () => {
     expect(screen.getByLabelText('Waning Gibbous')).toBeInTheDocument()
   })
 
-  it('renders loading state when data is null', () => {
+  it('renders accessible loading state when data is null', () => {
     render(<MoonPhaseDisplay data={null} />)
+    const status = screen.getByRole('status')
+    expect(status).toHaveAttribute('aria-busy', 'true')
     expect(screen.getByText(/loading/i)).toBeInTheDocument()
   })
 
-  it('renders error state', () => {
+  it('renders accessible error state', () => {
     render(<MoonPhaseDisplay data={null} error="API error: 500" />)
+    expect(screen.getByRole('alert')).toBeInTheDocument()
     expect(screen.getByText(/API error: 500/)).toBeInTheDocument()
   })
 })
