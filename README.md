@@ -4,7 +4,7 @@ A whimsical web app that displays the current moon phase with cat-themed phrasin
 
 ## Tech Stack
 
-- **Frontend**: React + TypeScript (Vite)
+- **Frontend**: React + TypeScript (Vite) + Tailwind CSS
 - **Backend**: Ruby on Rails (API-only)
 - **Dev Environment**: Docker Compose
 - **Task Tracking**: [Beads](https://github.com/steveyegge/beads)
